@@ -1441,11 +1441,7 @@ function App() {
       </div>
     </>
   );
-  <script
-    data-goatcounter="https://gadm12.goatcounter.com/count"
-    async
-    src="//gc.zgo.at/count.js"
-  ></script>;
+  
 }
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
