@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-body { font-family: 'Cairo Variable', Tahoma, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; background: #fafaf9; color: #1e293b; padding-bottom: 90px; }
+html { color-scheme: dark; background: #101318; scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { font-family: 'Cairo Variable', Tahoma, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; background: #101318; color: #e2e8f0; padding-bottom: 90px; }
 a, summary { -webkit-tap-highlight-color: transparent; }
-a:focus-visible, summary:focus-visible { outline: 3px solid #c2410c; outline-offset: 5px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #fb923c; outline-offset: 5px; }
 summary::-webkit-details-marker { display: none; }
 .badge-glow { box-shadow: 0 0 25px -5px rgb(234 88 12 / 35%); }
 @keyframes floatSlow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
@@ -22,4 +22,4 @@ body > #root > .fixed.bottom-0 { padding-bottom: calc(12px + env(safe-area-inset
  section p { line-height: 1.9; }
  section [data-purpose='faq-accordion-container'] p { font-size: 14px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation: none !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { html { color-scheme: dark; background: #101318; scroll-behavior: auto; } *,*::before,*::after { animation: none !important; transition: none !important; } }
