@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/cairo';
 import './styles.css';
 
-const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent('أهلاً كابتن أسماء، حابة أستفسر عن تدريب السواقة والمواعيد والأسعار.')}`;
+const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent('أهلاً أسماء، حابة أستفسر عن تدريب السواقة والمواعيد والأسعار.')}`;
 
 function WhatsAppIcon() {
  return <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7a8.5 8.5 0 1 1 16.3-3.8Z"/><path d="m8 7 2 3-1.2 1.2a9 9 0 0 0 4 4L14 14l3 2c-1 2-3 2-5 1-3-1.4-5.5-4-6-7C5.8 8.5 6.5 7.5 8 7Z"/></svg>;
@@ -15,7 +15,7 @@ function WhatsAppLink({ className, children = 'واتساب' }) {
 const reviews = [
  { name: 'د. ميار مصطفى', initials: 'د.م', detail: 'طبيبة بشرية - بنها الجديدة', text: 'أنا كنت مرعوبة جداً من السواقة وكان عندي فوبيا حقيقية بسبب حادثة قديمة لأختي. أسماء بجد ملاك وصبرها مالهوش حدود، شالت التوتر من أول خمس دقايق ودلوقتي بسوق عربيتي للشغل كل يوم لوحدي!' },
  { name: 'سارة عبد الرحمن', initials: 'س.ع', detail: 'مهندسة معمارية - بنها', text: 'كنت واخدة كورس مانيوال في مدرسة تانية وطلعت مش عارفة أطلع كوبري وكل شوية العربية تبطل مني. مع أسماء شرحتلي الدبرياج بطريقة سهلة عمري ما أنساها، وبقيت حريفة مانيوال في أسبوعين بس.' },
- { name: 'نهى حسام', initials: 'ن.ح', detail: 'ربة منزل وأم لطفلين - بنها', text: 'الركنات كانت كابوس بالنسبالي، بقالي سنتين بسوق ومش بعرف أركن غير في مكان فاضي خالص. أسماء علمتني نقاط مرجعية بالمرايات خلت الركن الموازي أسهل حاجة عندي. شكراً من قلبي يا كابتن!' },
+ { name: 'نهى حسام', initials: 'ن.ح', detail: 'ربة منزل وأم لطفلين - بنها', text: 'الركنات كانت كابوس بالنسبالي، بقالي سنتين بسوق ومش بعرف أركن غير في مكان فاضي خالص. أسماء علمتني نقاط مرجعية بالمرايات خلت الركن الموازي أسهل حاجة عندي. شكراً من قلبي يا أسماء!' },
 ];
 function Testimonials() {
  return <section className="py-16 sm:py-24 bg-brand-50/50" id="testimonials">
