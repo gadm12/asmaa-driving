@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "@fontsource-variable/cairo";
 import "./styles.css";
+import { trackContactClick } from "./analytics.js";
 
 const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent("أهلاً أسماء، حابة أستفسر عن تدريب السواقة والمواعيد والأسعار.")}`;
 
@@ -27,6 +28,7 @@ function WhatsAppLink({ className, children = "واتساب" }) {
     <a
       className={className}
       href={whatsappUrl}
+      onClick={trackContactClick}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -153,6 +155,7 @@ function App() {
             <a
               className="text-brand-400 hover:text-brand-300 font-bold tracking-wider inline-flex items-center gap-1"
               href="tel:01221092927"
+              onClick={trackContactClick}
             >
               <span className="hidden sm:inline" dir="ltr">
                 {"01221092927"}
@@ -256,6 +259,7 @@ function App() {
             <a
               className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-extrabold px-3 sm:px-5 py-2.5 rounded-xl transition shadow-md shadow-brand-600/30"
               href="tel:01221092927"
+              onClick={trackContactClick}
             >
               <span className="hidden sm:inline" dir="ltr">
                 {"01221092927"}
@@ -324,6 +328,7 @@ function App() {
                   <a
                     className="inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-black text-lg px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 hover:-translate-y-0.5 transition-all text-center"
                     href="tel:01221092927"
+                    onClick={trackContactClick}
                   >
                     <svg
                       className="w-5 h-5"
@@ -672,6 +677,7 @@ function App() {
                   <a
                     className="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-black text-base group"
                     href="tel:01221092927"
+                    onClick={trackContactClick}
                   >
                     <span>
                       {
@@ -823,6 +829,7 @@ function App() {
                   <a
                     className="w-full inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm py-3.5 px-4 rounded-xl transition"
                     href="tel:01221092927"
+                    onClick={trackContactClick}
                   >
                     <span>{"احجزي كورس الأوتوماتيك"}</span>
                     <span>{"←"}</span>
@@ -893,6 +900,7 @@ function App() {
                   <a
                     className="w-full inline-flex items-center justify-center gap-2 bg-surface-raised hover:bg-surface-border text-white font-extrabold text-sm py-3.5 px-4 rounded-xl transition"
                     href="tel:01221092927"
+                    onClick={trackContactClick}
                   >
                     <span>{"احجزي كورس المانيوال"}</span>
                     <span>{"←"}</span>
@@ -962,6 +970,7 @@ function App() {
                   <a
                     className="w-full inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm py-3.5 px-4 rounded-xl transition"
                     href="tel:01221092927"
+                    onClick={trackContactClick}
                   >
                     <span>
                       {"احجزي كورس استعادة الثقة"}
@@ -983,6 +992,7 @@ function App() {
               <a
                 className="shrink-0 bg-surface-panel hover:bg-surface-canvas text-brand-300 border border-brand-500/40 font-bold text-xs sm:text-sm px-4 py-2 rounded-xl"
                 href="tel:01221092927"
+                onClick={trackContactClick}
               >
                 {"استشيري أسماء مجاناً"}
               </a>
@@ -1228,6 +1238,7 @@ function App() {
                     <a
                       className="text-brand-300 underline underline-offset-4"
                       href={whatsappUrl}
+                      onClick={trackContactClick}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -1265,6 +1276,7 @@ function App() {
               <a
                 className="inline-flex items-center gap-4 bg-gradient-to-r from-brand-700 to-brand-600 hover:from-brand-700 hover:to-brand-800 text-white text-2xl sm:text-3xl font-black px-8 py-5 rounded-2xl shadow-xl shadow-brand-500/30 hover:scale-105 transition-all"
                 href="tel:01221092927"
+                onClick={trackContactClick}
               >
                 <span className="tracking-widest" dir="ltr">
                   {"01221092927"}
@@ -1388,6 +1400,7 @@ function App() {
                 className="block font-mono text-base font-bold text-white hover:text-brand-400"
                 dir="ltr"
                 href="tel:01221092927"
+                onClick={trackContactClick}
               >
                 {"01221092927"}
               </a>
@@ -1424,6 +1437,7 @@ function App() {
         <a
           className="flex-1 inline-flex items-center justify-center gap-2 bg-brand-600 active:bg-brand-700 text-white font-black text-sm py-3 rounded-xl shadow-md shadow-brand-600/20"
           href="tel:01221092927"
+          onClick={trackContactClick}
         >
           <svg
             className="w-4 h-4"

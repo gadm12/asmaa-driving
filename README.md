@@ -31,3 +31,11 @@ In the GitHub repository, open **Settings → Pages → Build and deployment** a
 Commit and push the deployment files to `main` when ready. The workflow builds the app and publishes `dist/`.
 Do not publish the raw source from the root of `main`: browsers cannot run the unbuilt JSX entry point.
 If the repository is renamed or a custom domain is added, update `base` in `vite.config.js` accordingly.
+
+## Contact analytics
+
+GoatCounter is loaded once in `index.html`, using `https://gadm12.goatcounter.com/count`.
+All telephone and WhatsApp links send `call-click` or `whatsapp-click` events. View these in the GoatCounter dashboard alongside page views. `no_session: true` counts repeated clicks too.
+These events measure link clicks, not completed calls or messages. No message text or phone number is added to the event payload.
+Clicks made before the analytics script loads are queued until it is ready. Blocked analytics never prevents contacting the business.
+GoatCounter skips localhost by default. For local testing only, set `window.goatcounter = { allow_local: true }` before the counter script loads; keep this out of production to avoid mixing test traffic into your statistics.
