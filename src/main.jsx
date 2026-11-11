@@ -3,6 +3,38 @@ import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/cairo';
 import './styles.css';
 
+const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent('أهلاً كابتن أسماء، حابة أستفسر عن تدريب السواقة والمواعيد والأسعار.')}`;
+
+function WhatsAppIcon() {
+ return <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7a8.5 8.5 0 1 1 16.3-3.8Z"/><path d="m8 7 2 3-1.2 1.2a9 9 0 0 0 4 4L14 14l3 2c-1 2-3 2-5 1-3-1.4-5.5-4-6-7C5.8 8.5 6.5 7.5 8 7Z"/></svg>;
+}
+function WhatsAppLink({ className, children = 'واتساب' }) {
+ return <a className={className} href={whatsappUrl} target="_blank" rel="noopener noreferrer"><WhatsAppIcon />{children}</a>;
+}
+
+const reviews = [
+ { name: 'د. ميار مصطفى', initials: 'د.م', detail: 'طبيبة بشرية - بنها الجديدة', text: 'أنا كنت مرعوبة جداً من السواقة وكان عندي فوبيا حقيقية بسبب حادثة قديمة لأختي. أسماء بجد ملاك وصبرها مالهوش حدود، شالت التوتر من أول خمس دقايق ودلوقتي بسوق عربيتي للشغل كل يوم لوحدي!' },
+ { name: 'سارة عبد الرحمن', initials: 'س.ع', detail: 'مهندسة معمارية - بنها', text: 'كنت واخدة كورس مانيوال في مدرسة تانية وطلعت مش عارفة أطلع كوبري وكل شوية العربية تبطل مني. مع أسماء شرحتلي الدبرياج بطريقة سهلة عمري ما أنساها، وبقيت حريفة مانيوال في أسبوعين بس.' },
+ { name: 'نهى حسام', initials: 'ن.ح', detail: 'ربة منزل وأم لطفلين - بنها', text: 'الركنات كانت كابوس بالنسبالي، بقالي سنتين بسوق ومش بعرف أركن غير في مكان فاضي خالص. أسماء علمتني نقاط مرجعية بالمرايات خلت الركن الموازي أسهل حاجة عندي. شكراً من قلبي يا كابتن!' },
+];
+function Testimonials() {
+ return <section className="py-16 sm:py-24 bg-brand-50/50" id="testimonials">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+    <div className="text-right"><span className="text-xs sm:text-sm font-black text-brand-600 bg-brand-100 px-3 py-1 rounded-md">شهادات نفخر بيها</span><h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-2">قصص نجاح متدرباتنا</h2><p className="text-slate-600 text-sm sm:text-base mt-1">سيدات وبنات كسروا حاجز الخوف وبقوا يسوقوا في كل مكان بمصر.</p></div>
+    <div className="flex flex-wrap items-center gap-2"><span className="text-amber-500 text-lg" aria-label="٥ من ٥ نجوم">★★★★★</span><span className="text-xs sm:text-sm font-bold text-slate-700">تقييم 5 نجوم من مئات المتدربات</span></div>
+   </div>
+   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {reviews.map(review => <figure key={review.name} className="bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-3xl p-7 shadow-lg shadow-brand-500/20 flex flex-col justify-between text-right relative overflow-hidden">
+     <span className="text-white/20 text-6xl font-serif absolute -top-2 left-4 select-none" aria-hidden="true">“</span>
+     <div><span className="block text-yellow-300 text-sm mb-4" aria-label="٥ من ٥ نجوم">★★★★★</span><blockquote className="text-sm sm:text-base leading-relaxed font-medium text-white/95">«{review.text}»</blockquote></div>
+     <figcaption className="mt-6 pt-5 border-t border-white/20 flex items-center gap-3"><span className="w-11 h-11 shrink-0 rounded-full bg-white/20 flex items-center justify-center font-bold text-white border border-white/40" aria-hidden="true">{review.initials}</span><span><span className="block font-black text-sm">{review.name}</span><span className="text-xs text-white/80">{review.detail}</span></span></figcaption>
+    </figure>)}
+   </div>
+  </div>
+ </section>;
+}
+
 function App() {
  return <>
   <div className="bg-charcoal-900 text-stone-200 text-xs sm:text-sm py-2 px-4 border-b border-stone-800">
@@ -64,19 +96,14 @@ function App() {
           {"منهجية التعليم"}
         </a>
         <a className="hover:text-brand-600 transition-colors" href="#testimonials">
-          {"صفحتنا على فيسبوك"}
+          {"آراء المتدربات"}
         </a>
         <a className="hover:text-brand-600 transition-colors" href="#faq">
           {"الأسئلة الشائعة"}
         </a>
       </nav>
       <div className="flex items-center gap-3">
-        <a className="hidden sm:inline-flex items-center justify-center gap-2 bg-charcoal-900 hover:bg-charcoal-800 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition shadow-sm hover:shadow" href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">
-          <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 22v-9h3l.5-4H14V7c0-1.2.3-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z" />
-          </svg>
-          {"فيسبوك"}
-        </a>
+        <WhatsAppLink className="hidden sm:inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition shadow-sm">واتساب سريع</WhatsAppLink>
         <a className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-extrabold px-3 sm:px-5 py-2.5 rounded-xl transition shadow-md shadow-brand-600/30" href="tel:01221092927">
           <span className="hidden sm:inline" dir="ltr">
             {"01221092927"}
@@ -672,7 +699,8 @@ function App() {
       </div>
     </div>
   </section>
-  <section className="py-16 sm:py-24 bg-brand-50/50" id="testimonials">
+  <Testimonials />
+  <section className="py-16 sm:py-24 bg-brand-50/50" id="facebook">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
@@ -775,7 +803,7 @@ function App() {
             <strong className="text-brand-600">
               {"01221092927"}
             </strong>
-            {"أو التواصل من خلال صفحتنا على فيسبوك، لتحديد موعد الحصة ومكان المقابلة الأنسب لكِ."}
+            <span> أو <a className="text-brand-700 underline underline-offset-4" href={whatsappUrl} target="_blank" rel="noopener noreferrer">إرسال رسالة على واتساب</a> لتحديد موعد الحصة ومكان المقابلة الأنسب لكِ.</span>
           </p>
         </details>
       </div>
@@ -818,9 +846,7 @@ function App() {
           <span>
             {"•"}
           </span>
-          <a className="text-brand-300 hover:text-white underline underline-offset-4" href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">
-            {"أو تواصلي معانا على فيسبوك"}
-          </a>
+          <WhatsAppLink className="inline-flex items-center gap-2 text-brand-300 hover:text-white underline underline-offset-4">أو راسلينا على الواتساب</WhatsAppLink>
         </div>
       </div>
     </div>
@@ -871,7 +897,7 @@ function App() {
             </li>
             <li>
               <a className="hover:text-white transition" href="#testimonials">
-                {"صفحتنا على فيسبوك"}
+                {"آراء المتدربات"}
               </a>
             </li>
             <li>
@@ -891,6 +917,7 @@ function App() {
           <a className="block font-mono text-base font-bold text-white hover:text-brand-400" dir="ltr" href="tel:01221092927">
             {"01221092927"}
           </a>
+          <a className="inline-block text-brand-300 hover:text-white underline underline-offset-4 text-xs py-2" href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">صفحتنا على فيسبوك</a>
           <p className="text-xs text-stone-400">
             {"بنها والمناطق المجاورة"}
           </p>
@@ -917,14 +944,7 @@ function App() {
         {"اتصلي الآن"}
       </span>
     </a>
-    <a className="flex-1 inline-flex items-center justify-center gap-2 bg-charcoal-900 active:bg-charcoal-800 text-white font-black text-sm py-3 rounded-xl shadow-md shadow-charcoal-900/20" href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">
-      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M14 22v-9h3l.5-4H14V7c0-1.2.3-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z" />
-      </svg>
-      <span>
-        {"فيسبوك"}
-      </span>
-    </a>
+    <WhatsAppLink className="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-600 active:bg-emerald-700 text-white font-black text-sm py-3 rounded-xl shadow-md shadow-emerald-600/20" />
   </div>
  </>;
 }

@@ -34,3 +34,5 @@ build/
 # Operating System Files
 .DS_Store
 *Zone.Identifier*
+
+/my_folder

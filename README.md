@@ -22,4 +22,4 @@ Business information is transcribed from `photos/main_source.PNG`. The contact n
 
 ## Template and contact links
 
-The React layout follows `Test.html`, which is preserved as the reference. Tailwind CSS and the Cairo Arabic font are bundled locally. Social contact buttons open the exact Facebook URL in `Facebook Share.rtf`; telephone links retain direct calling. The template review examples are replaced with a link to the real Facebook page. The favicon and brand marks use a steering wheel.
+The React layout follows `Test.html`, which is preserved as the reference. Tailwind CSS and the Cairo Arabic font are bundled locally. WhatsApp buttons open a chat with `201221092927` and a prefilled Arabic enquiry for the visitor to send. Facebook remains available in its dedicated section and footer; telephone links retain direct calling. Customer ratings and testimonial cards are restored from the previously supplied template. The favicon and brand marks use a steering wheel.
