@@ -6,6 +6,17 @@ import { trackContactClick } from "./analytics.js";
 
 const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent("أهلاً أسماء، حابة أستفسر عن تدريب السواقة والمواعيد والأسعار.")}`;
 
+function BrandMark({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M15 5h18c17 0 26 9 26 22S48 48 31 48h-5l-5 12H7l14-24c9-4 19-6 20-14 1-6-3-10-9-10h-4L15 39Z" />
+      <path d="M28 18a7 7 0 0 1 14 0c0 5-7 12-7 12s-7-7-7-12Z" fill="#FBE8EF" />
+      <circle cx="35" cy="18" r="2.5" fill="#B8326A" />
+      <path d="M13 59c5-16 14-22 28-28" stroke="#FBE8EF" strokeWidth="2.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function WhatsAppIcon() {
   return (
     <svg
@@ -150,7 +161,7 @@ function App() {
           </div>
           <div className="flex items-center gap-4 text-xs">
             <span className="text-slate-400">
-              {"📍 بنها والمناطق المجاورة"}
+              {"📍 بنها والمناطق المجاورة، القاهرة، مدينة نصر"}
             </span>
             <a
               className="text-brand-400 hover:text-brand-300 font-bold tracking-wider inline-flex items-center gap-1"
@@ -188,32 +199,11 @@ function App() {
             href="#"
           >
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-700 to-brand-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.8"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a10 10 0 0 0-10 10c0 4.14 2.52 7.7 6.13 9.2" />
-                <circle cx="12" cy="12" r="3" />
-                <line x1="12" x2="12" y1="15" y2="22" />
-                <line x1="9.2" x2="2.6" y1="10.8" y2="9" />
-                <line
-                  x1="14.8"
-                  x2="21.4"
-                  y1="10.8"
-                  y2="9"
-                />
-              </svg>
+              <BrandMark className="w-9 h-9" />
             </div>
             <div className="flex flex-col text-right">
               <span className="text-lg sm:text-xl font-black tracking-tight text-slate-100 group-hover:text-brand-400 transition-colors">
-                {"أسماء سعيد"}
+                {"pinkycar"}
               </span>
               <span className="text-[10px] sm:text-xs font-semibold text-brand-400 tracking-wide">
                 {"تعليم قيادة السيارات • للسيدات فقط"}
@@ -290,7 +280,7 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               <div className="lg:col-span-7 space-y-6 text-right">
-                <div className="inline-flex items-center gap-2 bg-brand-500/15 text-brand-200 text-xs sm:text-sm font-black px-4 py-2 rounded-full border border-brand-500/25">
+                <div className="inline-flex items-center gap-2 bg-brand-500/15 text-brand-400 text-xs sm:text-sm font-black px-4 py-2 rounded-full border border-brand-500/25">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-600" />
                   <span>
                     {"تعليم قيادة السيارات • للسيدات فقط"}
@@ -321,7 +311,7 @@ function App() {
                 </div>
                 <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-medium max-w-2xl">
                   {
-                    "خدي أول خطوة وإنتي مطمنة تماماً. اتعلّمي السواقة مع أسماء سعيد، بصبر واهتمام وبدون أي توتر، خطوة بخطوة لحد ما توصلي للأمان والثقة الكاملة ورا الدركسيون في أصعب شوارع وزحام بنها و مصر."
+                    "خدي أول خطوة وإنتي مطمنة تماماً. اتعلّمي السواقة مع أسماء سعيد، بصبر واهتمام وبدون أي توتر، خطوة بخطوة لحد ما توصلي للأمان والثقة الكاملة ورا الدركسيون في أصعب شوارع وزحام بنها والقاهرة، مدينة نصر و مصر."
                   }
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -416,88 +406,8 @@ function App() {
                   <div className="relative bg-surface-panel rounded-2xl p-6 shadow-inner border border-surface-border overflow-hidden text-center">
                     <div className="w-32 h-32 rounded-full bg-brand-200/50 absolute -top-8 -right-8 pointer-events-none blur-lg" />
                     <div className="py-6 flex flex-col items-center justify-center">
-                      <div className="w-full max-w-[280px] h-36 relative flex items-center justify-center">
-                        <div className="absolute bottom-2 w-full h-8 bg-surface-border rounded-xl overflow-hidden flex items-center justify-around px-2">
-                          <span className="w-6 h-1.5 bg-yellow-400 rounded" />
-                          <span className="w-6 h-1.5 bg-surface-border rounded" />
-                          <span className="w-6 h-1.5 bg-surface-border rounded" />
-                          <span className="w-6 h-1.5 bg-surface-border rounded" />
-                        </div>
-                        <svg
-                          className="w-56 h-28 relative z-10"
-                          fill="none"
-                          viewBox="0 0 200 100"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M45 50 L70 20 L135 20 L160 50 Z"
-                            fill="#ea580c"
-                          />
-                          <path
-                            d="M72 24 L100 24 L100 48 L52 48 Z"
-                            fill="#ffffff"
-                            opacity="0.9"
-                          />
-                          <path
-                            d="M104 24 L132 24 L152 48 L104 48 Z"
-                            fill="#ffffff"
-                            opacity="0.9"
-                          />
-                          <circle
-                            cx="86"
-                            cy="36"
-                            fill="#0f172a"
-                            r="6"
-                          />
-                          <rect
-                            fill="#f97316"
-                            height="32"
-                            rx="10"
-                            width="150"
-                            x="25"
-                            y="48"
-                          />
-                          <rect
-                            fill="#fef08a"
-                            height="10"
-                            rx="3"
-                            width="10"
-                            x="165"
-                            y="55"
-                          />
-                          <rect
-                            fill="#ef4444"
-                            height="10"
-                            rx="2"
-                            width="6"
-                            x="25"
-                            y="55"
-                          />
-                          <circle
-                            cx="58"
-                            cy="80"
-                            fill="#1e293b"
-                            r="16"
-                          />
-                          <circle
-                            cx="58"
-                            cy="80"
-                            fill="#e2e8f0"
-                            r="8"
-                          />
-                          <circle
-                            cx="142"
-                            cy="80"
-                            fill="#1e293b"
-                            r="16"
-                          />
-                          <circle
-                            cx="142"
-                            cy="80"
-                            fill="#e2e8f0"
-                            r="8"
-                          />
-                        </svg>
+                      <div className="pinky-car">
+                        <img src={`${import.meta.env.BASE_URL}pinkycar-reference.png`} alt="سيارة بيضاء بتصميم pinkycar الوردي" />
                       </div>
                       <div className="mt-2 text-center">
                         <h3 className="text-slate-100 font-extrabold text-base">
@@ -768,7 +678,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-surface-canvas rounded-3xl p-8 border border-surface-border hover:border-brand-500 hover:shadow-xl transition-all flex flex-col justify-between text-right">
                 <div>
-                  <div className="inline-block px-3 py-1 bg-brand-500/15 text-brand-200 rounded-lg text-xs font-black mb-4">
+                  <div className="inline-block px-3 py-1 bg-brand-500/15 text-brand-400 rounded-lg text-xs font-black mb-4">
                     {"الأكثر طلباً للمبتدئات"}
                   </div>
                   <h3 className="text-2xl font-black text-slate-100">
@@ -898,7 +808,7 @@ function App() {
                 </div>
                 <div className="mt-8 pt-6 border-t border-surface-border">
                   <a
-                    className="w-full inline-flex items-center justify-center gap-2 bg-surface-raised hover:bg-surface-border text-white font-extrabold text-sm py-3.5 px-4 rounded-xl transition"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-surface-raised hover:bg-surface-border text-slate-100 font-extrabold text-sm py-3.5 px-4 rounded-xl transition"
                     href="tel:01221092927"
                     onClick={trackContactClick}
                   >
@@ -1252,14 +1162,14 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="py-16 sm:py-20 bg-surface-canvas text-white relative overflow-hidden">
+        <section className="py-16 sm:py-20 bg-surface-canvas text-slate-100 relative overflow-hidden">
           <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-600/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -left-20 -top-20 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
             <div className="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full">
               <span>{"قيادة آمنة .. حياة أسعد وأسهل"}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-100 leading-tight">
               {"جاهزة تكسري حاجز الخوف"}
               <br className="hidden sm:inline" />
               {"وتملكي حريتك على الطريق؟"}
@@ -1302,7 +1212,7 @@ function App() {
                   {"متاح الرد يومياً"}
                 </span>
                 <span>{"•"}</span>
-                <WhatsAppLink className="inline-flex items-center gap-2 text-brand-300 hover:text-white underline underline-offset-4">
+                <WhatsAppLink className="inline-flex items-center gap-2 text-brand-300 hover:text-brand-700 underline underline-offset-4">
                   أو راسلينا على الواتساب
                 </WhatsAppLink>
               </div>
@@ -1316,21 +1226,10 @@ function App() {
             <div className="md:col-span-6 space-y-3">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-sm">
-                  <svg
-                    className="w-6 h-6"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="9" />
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M3 10h6m6 0h6m-9 5v6" />
-                  </svg>
+                  <BrandMark className="w-7 h-7" />
                 </div>
-                <span className="text-white font-black text-lg">
-                  {"أكاديمية أسماء سعيد"}
+                <span className="text-slate-100 font-black text-lg">
+                  {"pinkycar"}
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
@@ -1343,13 +1242,13 @@ function App() {
               </div>
             </div>
             <div className="md:col-span-3 space-y-2">
-              <span className="block font-bold text-white text-sm">
+              <span className="block font-bold text-slate-100 text-sm">
                 {"روابط سريعة"}
               </span>
               <ul className="space-y-1.5 text-xs text-slate-400">
                 <li>
                   <a
-                    className="hover:text-white transition"
+                    className="hover:text-slate-100 transition"
                     href="#why-us"
                   >
                     {"ليه تختاري أسماء؟"}
@@ -1357,7 +1256,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-white transition"
+                    className="hover:text-slate-100 transition"
                     href="#programs"
                   >
                     {"باقات المانيوال والأوتوماتيك"}
@@ -1365,7 +1264,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-white transition"
+                    className="hover:text-slate-100 transition"
                     href="#steps"
                   >
                     {"خطوات التدريب التدريجي"}
@@ -1373,7 +1272,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-white transition"
+                    className="hover:text-slate-100 transition"
                     href="#testimonials"
                   >
                     {"آراء المتدربات"}
@@ -1381,7 +1280,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    className="hover:text-white transition"
+                    className="hover:text-slate-100 transition"
                     href="#faq"
                   >
                     {"الأسئلة الشائعة"}
@@ -1390,14 +1289,14 @@ function App() {
               </ul>
             </div>
             <div className="md:col-span-3 space-y-2">
-              <span className="block font-bold text-white text-sm">
+              <span className="block font-bold text-slate-100 text-sm">
                 {"بيانات التواصل المباشر"}
               </span>
               <p className="text-xs text-slate-400">
                 {"للحجز والاستفسار الفوري:"}
               </p>
               <a
-                className="block font-mono text-base font-bold text-white hover:text-brand-400"
+                className="block font-mono text-base font-bold text-slate-100 hover:text-brand-400"
                 dir="ltr"
                 href="tel:01221092927"
                 onClick={trackContactClick}
@@ -1405,7 +1304,7 @@ function App() {
                 {"01221092927"}
               </a>
               <a
-                className="inline-block text-brand-300 hover:text-white underline underline-offset-4 text-xs py-2"
+                className="inline-block text-brand-300 hover:text-slate-100 underline underline-offset-4 text-xs py-2"
                 href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1413,7 +1312,7 @@ function App() {
                 صفحتنا على فيسبوك
               </a>
               <p className="text-xs text-slate-400">
-                {"بنها والمناطق المجاورة"}
+                {"بنها والمناطق المجاورة، القاهرة، مدينة نصر"}
               </p>
             </div>
           </div>
@@ -1424,7 +1323,7 @@ function App() {
                 {new Date().getFullYear()}
               </span>
               {
-                "أسماء سعيد - لتعليم قيادة السيارات للسيدات."
+                "pinkycar - لتعليم قيادة السيارات للسيدات."
               }
             </div>
             <div className="text-slate-400">
