@@ -8,11 +8,27 @@ const whatsappUrl = `https://wa.me/201221092927?text=${encodeURIComponent("أه�
 
 function BrandMark({ className }) {
   return (
-    <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden="true">
-      <path fill="currentColor" d="M15 5h18c17 0 26 9 26 22S48 48 31 48h-5l-5 12H7l14-24c9-4 19-6 20-14 1-6-3-10-9-10h-4L15 39Z" />
-      <path d="M28 18a7 7 0 0 1 14 0c0 5-7 12-7 12s-7-7-7-12Z" fill="#FBE8EF" />
+    <svg
+      className={className}
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        d="M15 5h18c17 0 26 9 26 22S48 48 31 48h-5l-5 12H7l14-24c9-4 19-6 20-14 1-6-3-10-9-10h-4L15 39Z"
+      />
+      <path
+        d="M28 18a7 7 0 0 1 14 0c0 5-7 12-7 12s-7-7-7-12Z"
+        fill="#FBE8EF"
+      />
       <circle cx="35" cy="18" r="2.5" fill="#B8326A" />
-      <path d="M13 59c5-16 14-22 28-28" stroke="#FBE8EF" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M13 59c5-16 14-22 28-28"
+        stroke="#FBE8EF"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -50,6 +66,12 @@ function WhatsAppLink({ className, children = "واتساب" }) {
 }
 
 const reviews = [
+  {
+    name: "د. رغدة نبيل دنيا",
+    initials: "ر.ن",
+    detail: "طبيبة جلدية - بنها",
+    text: "اتعلمت من أسماء أجمّد قلبي وأنا بسوق، وما أتوترش من اللي حواليا. بأسلوبها الهادي وصبرها، ساعدتني آخد الأمور خطوة خطوة وأركز في الطريق بدل ما الخوف يشتتني. بقيت أتعامل مع المواقف بهدوء أكتر، وآخد قراراتي من غير استعجال أو ارتباك. ومع كل حصة، ثقتي في نفسي كانت بتزيد، وبقيت أحس إني قادرة أتعلم وأتحسن، وإن السواقة ممكن تبقى تجربة مريحة.",
+  },
   {
     name: "د. ميار مصطفى",
     initials: "د.م",
@@ -101,7 +123,7 @@ function Testimonials() {
             </span>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((review) => (
             <figure
               key={review.name}
@@ -114,12 +136,14 @@ function Testimonials() {
                 “
               </span>
               <div>
-                <span
-                  className="block text-yellow-300 text-sm mb-4"
-                  aria-label="٥ من ٥ نجوم"
-                >
-                  ★★★★★
-                </span>
+                {review.showStars !== false && (
+                  <span
+                    className="block text-yellow-300 text-sm mb-4"
+                    aria-label="٥ من ٥ نجوم"
+                  >
+                    ★★★★★
+                  </span>
+                )}
                 <blockquote className="text-sm sm:text-base leading-relaxed font-medium text-white/95">
                   «{review.text}»
                 </blockquote>
@@ -161,7 +185,9 @@ function App() {
           </div>
           <div className="flex items-center gap-4 text-xs">
             <span className="text-slate-400">
-              {"📍 بنها والمناطق المجاورة، القاهرة، مدينة نصر"}
+              {
+                "📍 بنها والمناطق المجاورة، القاهرة، مدينة نصر"
+              }
             </span>
             <a
               className="text-brand-400 hover:text-brand-300 font-bold tracking-wider inline-flex items-center gap-1"
@@ -407,7 +433,10 @@ function App() {
                     <div className="w-32 h-32 rounded-full bg-brand-200/50 absolute -top-8 -right-8 pointer-events-none blur-lg" />
                     <div className="py-6 flex flex-col items-center justify-center">
                       <div className="pinky-car">
-                        <img src={`${import.meta.env.BASE_URL}pinkycar-reference.png`} alt="سيارة بيضاء بتصميم pinkycar الوردي" />
+                        <img
+                          src={`${import.meta.env.BASE_URL}pinkycar-reference.png`}
+                          alt="سيارة بيضاء بتصميم pinkycar الوردي"
+                        />
                       </div>
                       <div className="mt-2 text-center">
                         <h3 className="text-slate-100 font-extrabold text-base">
@@ -1016,8 +1045,8 @@ function App() {
                 </p>
               </div>
               <a
-                className="facebook-card bg-gradient-to-br from-brand-700 to-brand-800 text-white rounded-3xl p-8 shadow-lg shadow-brand-500/20 flex flex-col gap-5 items-start"
-                href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr"
+                className="facebook-card bg-[#1877F2] text-white rounded-3xl p-8 shadow-lg shadow-[#1877F2]/20 flex flex-col gap-5 items-start"
+                href="https://www.facebook.com/share/1FCJRRyBF6/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1305,14 +1334,16 @@ function App() {
               </a>
               <a
                 className="inline-block text-brand-300 hover:text-slate-100 underline underline-offset-4 text-xs py-2"
-                href="https://www.facebook.com/share/1P9RckQf78/?mibextid=wwXIfr"
+                href="https://www.facebook.com/share/1FCJRRyBF6/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 صفحتنا على فيسبوك
               </a>
               <p className="text-xs text-slate-400">
-                {"بنها والمناطق المجاورة، القاهرة، مدينة نصر"}
+                {
+                  "بنها والمناطق المجاورة، القاهرة، مدينة نصر"
+                }
               </p>
             </div>
           </div>
@@ -1322,9 +1353,7 @@ function App() {
               <span id="current-year">
                 {new Date().getFullYear()}
               </span>
-              {
-                "pinkycar - لتعليم قيادة السيارات للسيدات."
-              }
+              {"pinkycar - لتعليم قيادة السيارات للسيدات."}
             </div>
             <div className="text-slate-400">
               {"معاً نحو قيادة هادئة ومطمئنة 🚗✨"}
@@ -1354,7 +1383,6 @@ function App() {
       </div>
     </>
   );
-  
 }
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
